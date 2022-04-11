@@ -49,16 +49,16 @@ function clearOutputDoOnce() {
   output.textContent = ''
 }
 
-//Exemplul 4
-function resetOnce() {`
-  document.cookie = "doSomethingOnlyOnce=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Secure";
-
-  const output = document.getElementById('reset-once')
-  output.textContent = '> Reset!'
+//Exemplul 6
+function checkCookieHasASpecificValue() {
+  if (document.cookie.split(';').some((item) => item.includes('reader=1'))) {
+    const output = document.getElementById('a-specific-value-of-the-cookie')
+    output.textContent = '> The cookie "reader" has a value of "1"'
+  }
 }
 
-function clearOutputResetOnce() {
-  const output = document.getElementById('reset-once')
+function clearASpecificValueOfTheCookie() {
+  const output = document.getElementById('a-specific-value-of-the-cookie')
   output.textContent = ''
 }
 </script>
@@ -98,15 +98,17 @@ function clearOutputResetOnce() {
   <code id="do-once"></code>
 </div>
   
-//Exemplul 4
-<button onclick="resetOnce()">Reset only once cookie</button>
+//Exemplul 6
+<button onclick="checkCookieHasASpecificValue()">
+  Check that a cookie has a specific value
+</button>
 
-<button onclick="clearOutputResetOnce()">
+<button onclick="clearASpecificValueOfTheCookie()">
   Clear
 </button>
 
 <div>
-  <code id="reset-once"></code>
+  <code id="a-specific-value-of-the-cookie"></code>
 </div>
 </body>
 
