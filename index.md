@@ -1,6 +1,8 @@
 
 <script> document.cookie = "session=test GDPR"; document.cookie = 
 "favorite_task=collect Data"; function alertCookie() { alert(document.cookie); }
+  
+// Exemplul 1  
 document.cookie = "name=oeschger; SameSite=None; Secure";
 document.cookie = "favorite_food=tripe; SameSite=None; Secure";
 
@@ -12,9 +14,31 @@ function showCookies() {
 function clearOutputCookies() {
   const output = document.getElementById('cookies')
   output.textContent = ''
-} 
+}
+  
+// Exemplul 2 
+document.cookie = "test1=Hello; SameSite=None; Secure";
+document.cookie = "test2=World; SameSite=None; Secure";
+
+const cookieValue = document.cookie
+  .split('; ')
+  .find(row => row.startsWith('test2='))
+  .split('=')[1];
+
+function showCookieValue() {
+  const output = document.getElementById('cookie-value')
+  output.textContent = '> ' + cookieValue
+}
+
+function clearOutputCookieValue() {
+  const output = document.getElementById('cookie-value')
+  output.textContent = ''
+}
+  
 </script>
 <body> Bine ai venit la lab <button onclick="alertCookie()">Show cookies</button>
+
+//Exemplul 1
 <button onclick="showCookies()">Arata cookies</button>
 
 <button onclick="clearOutputCookies()">
@@ -23,7 +47,18 @@ function clearOutputCookies() {
 
 <div>
   <code id="cookies"></code>
-</div>  
+</div>
+
+//Exemplul 2
+<button onclick="showCookieValue()">Show cookie value</button>
+
+<button onclick="clearOutputCookieValue()">
+  Clear
+</button>
+
+<div>
+  <code id="cookie-value"></code>
+</div>
 </body>
 
 
