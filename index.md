@@ -48,6 +48,19 @@ function clearOutputDoOnce() {
   const output = document.getElementById('do-once')
   output.textContent = ''
 }
+
+//Exemplul 4
+function resetOnce() {`
+  document.cookie = "doSomethingOnlyOnce=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Secure";
+
+  const output = document.getElementById('reset-once')
+  output.textContent = '> Reset!'
+}
+
+function clearOutputResetOnce() {
+  const output = document.getElementById('reset-once')
+  output.textContent = ''
+}
 </script>
 
 <body> Bine ai venit la lab <button onclick="alertCookie()">Show cookies</button>
@@ -83,6 +96,17 @@ function clearOutputDoOnce() {
 
 <div>
   <code id="do-once"></code>
+</div>
+  
+//Exemplul 4
+<button onclick="resetOnce()">Reset only once cookie</button>
+
+<button onclick="clearOutputResetOnce()">
+  Clear
+</button>
+
+<div>
+  <code id="reset-once"></code>
 </div>
 </body>
 
