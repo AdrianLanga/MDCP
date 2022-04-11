@@ -15,7 +15,7 @@ function clearOutputCookies() {
 } 
 </script>
 <body> Bine ai venit la lab <button onclick="alertCookie()">Show cookies</button>
-<button onclick="showCookies()">Arata coockie</button>
+<button onclick="showCookies()">Arata cookies</button>
 
 <button onclick="clearOutputCookies()">
   Clear
