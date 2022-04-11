@@ -48,7 +48,22 @@ function clearOutputDoOnce() {
   const output = document.getElementById('do-once')
   output.textContent = ''
 }
+  
+//Exemplul 5
+document.cookie = "reader=1; SameSite=None; Secure";
 
+function checkACookieExists() {
+  if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
+    const output = document.getElementById('a-cookie-existence')
+    output.textContent = '> The cookie "reader" exists'
+  }
+}
+
+function clearOutputACookieExists() {
+  const output = document.getElementById('a-cookie-existence')
+  output.textContent = ''
+}
+  
 //Exemplul 6
 function checkCookieHasASpecificValue() {
   if (document.cookie.split(';').some((item) => item.includes('reader=1'))) {
@@ -97,6 +112,19 @@ function clearASpecificValueOfTheCookie() {
 <div>
   <code id="do-once"></code>
 </div>
+  
+//Exemplul 5
+<button onclick="checkACookieExists()">
+  Check a cookie exists
+</button>
+
+<button onclick="clearOutputACookieExists()">
+  Clear
+</button>
+
+<div>
+  <code id="a-cookie-existence"></code>
+</div>  
   
 //Exemplul 6
 <button onclick="checkCookieHasASpecificValue()">
